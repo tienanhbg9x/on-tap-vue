@@ -17,7 +17,9 @@
     </head>
     <body>
         <div id="app">
-            <my-component></my-component>
+{{--            <my-component></my-component>--}}
+{{--            <conditional-rendering></conditional-rendering>--}}
+                <user-dashboard></user-dashboard>
         </div>
 
 
