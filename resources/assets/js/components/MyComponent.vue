@@ -1,7 +1,9 @@
 <template>
     <div class="my-component">
-        <div>{{ sayHi(message) }}</div>
-        <div>{{ reverseMessage }}</div>
+        <div>Message type: {{ message.type }}</div>
+        <div>Message text: {{ message.text }}</div>
+        <button @click="changeType">Change type</button>
+        <button @click="changeText">Change text</button>
     </div>
 </template>
 
@@ -10,17 +12,39 @@
         name: "MyComponent",
         data() {
             return {
-                message: 'this is text'
+                message: {
+                    type: 'greeting',
+                    text: 'How are you?'
+                }
             }
         },
+
         computed: {
-            reverseMessage() {
-                return this.message.split('').reverse().join('')
+            getType() {
+                return this.message.type
+            },
+            getText() {
+                return this.message.text
             }
         },
+
+        watch: {
+            getType() {
+                console.log('type changed')
+            },
+            getText() {
+                console.log('text changed')
+            }
+
+        },
+
         methods: {
-            sayHi(text) {
-                return text.toUpperCase();
+            changeText() {
+                this.message.text = 'this is new message'
+            },
+
+            changeType() {
+                this.message.type = 'this is new type'
             }
         }
     }
@@ -28,7 +52,7 @@
 
 <style lang="scss" scoped>
     .my-component {
-        color: red;
+        color: blue;
         text-align: center;
     }
 </style>
