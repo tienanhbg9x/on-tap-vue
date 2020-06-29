@@ -20,6 +20,7 @@
 {{--            <my-component></my-component>--}}
 {{--            <conditional-rendering></conditional-rendering>--}}
                 <user-dashboard></user-dashboard>
+                <life-cycle></life-cycle>
         </div>
 
 

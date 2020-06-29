@@ -991,6 +991,7 @@ window.Vue = __webpack_require__(35);
 // Vue.component('my-component', require('./components/Mycomponent.vue'));
 // Vue.component('conditional-rendering', require('./components/ConditionalRendering'))
 Vue.component('user-dashboard', __webpack_require__(58));
+Vue.component('life-cycle', __webpack_require__(74));
 
 var app = new Vue({
   el: '#app'
@@ -45751,6 +45752,220 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0a70843c", module.exports)
+  }
+}
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(75)
+}
+var normalizeComponent = __webpack_require__(45)
+/* script */
+var __vue_script__ = __webpack_require__(77)
+/* template */
+var __vue_template__ = __webpack_require__(78)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-429dfbba"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/LifeCycle.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-429dfbba", Component.options)
+  } else {
+    hotAPI.reload("data-v-429dfbba", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(76);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(43)("776e71f2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429dfbba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LifeCycle.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-429dfbba\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./LifeCycle.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(42)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "LifeCycle",
+    data: function data() {
+        return {
+            message: 'Hello',
+            counter: 0,
+            person: {
+                name: 'ABC'
+            }
+        };
+    },
+
+    // beforeCreate() {
+    //     console.log(this.message)
+    // },
+    // created() {
+    //     console.log(this.message);
+    //     console.log(document.getElementById('my-text').innerHTML)
+    // },
+    // mounted() {
+    //     console.log(this.$el)
+    //     console.log(document.getElementById('my-text').innerHTML)
+    // }
+    // beforeUpdate() {
+    //     console.log(this.counter) // Logs the counter value every second, before the DOM updates.
+    // },
+    // updated() {
+    //     // Fired every second, should always be true
+    //     console.log(+this.$refs['dom-element'].textContent === this.counter)
+    // },
+    // created() {
+    //     setInterval(() => {
+    //         this.counter++
+    //     }, 1000)
+    // },
+    methods: {
+        changeName: function changeName() {
+            this.person.name = 'Tiến Anh';
+        },
+        changeNickname: function changeNickname() {
+            this.person.nickname = Math.random().toString(36).substring(7);
+        },
+        changeNicknameProperly: function changeNicknameProperly() {
+            Vue.set(this.person, 'nickname', 'Louis');
+        }
+    }
+});
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", [
+      _vm._v("\n        Name: " + _vm._s(_vm.person.name) + "\n    ")
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _vm._v("\n        Nick name: " + _vm._s(_vm.person.nickname) + "\n    ")
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("button", { on: { click: _vm.changeName } }, [_vm._v("Change Name")])
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("button", { on: { click: _vm.changeNickname } }, [
+        _vm._v("Change Nick Name")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", [
+      _c("button", { on: { click: _vm.changeNicknameProperly } }, [
+        _vm._v("Change Nick name properly")
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-429dfbba", module.exports)
   }
 }
 

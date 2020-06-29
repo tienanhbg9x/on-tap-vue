@@ -19,6 +19,7 @@ window.Vue = require('vue');
 // Vue.component('my-component', require('./components/Mycomponent.vue'));
 // Vue.component('conditional-rendering', require('./components/ConditionalRendering'))
 Vue.component('user-dashboard', require('./components/UserDashboard'))
+Vue.component('life-cycle', require('./components/LifeCycle'))
 
 const app = new Vue({
     el: '#app'
