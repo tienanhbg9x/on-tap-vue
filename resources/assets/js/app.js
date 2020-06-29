@@ -20,6 +20,8 @@ window.Vue = require('vue');
 // Vue.component('conditional-rendering', require('./components/ConditionalRendering'))
 Vue.component('user-dashboard', require('./components/UserDashboard'))
 Vue.component('life-cycle', require('./components/LifeCycle'))
+Vue.component('binding-html', require('./components/BindingHTML'))
+Vue.component('binding-model', require('./components/BindingModel'))
 
 const app = new Vue({
     el: '#app'
